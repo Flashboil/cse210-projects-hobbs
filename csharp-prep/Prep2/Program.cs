@@ -37,7 +37,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("No quite there. Keep trying!");
+            Console.WriteLine("Not quite there. Keep trying!");
         }
 
     }
