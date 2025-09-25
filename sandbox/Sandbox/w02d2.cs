@@ -26,4 +26,9 @@ class Program
     {
         Console.WriteLine($"Hello {firstName}!");
     }
+
+    static void changeValue(int x)
+    {
+        x = 100;
+    }
 }
