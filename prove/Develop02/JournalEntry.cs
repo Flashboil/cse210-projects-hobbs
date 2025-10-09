@@ -38,7 +38,6 @@ public class JournalEntry
 
     public void DisplayEntry()
     {
-        Console.WriteLine("---");
         Console.WriteLine(_datetime);
         Console.WriteLine($"Rating: {_dayRating}");
         Console.WriteLine(_promptToday);
