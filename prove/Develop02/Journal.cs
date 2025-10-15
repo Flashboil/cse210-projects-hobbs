@@ -29,7 +29,7 @@ public class Journal
     
     public void LoadFromFile(string filename)
     {
-        string[] lines = File.ReadAllLines("journal.txt");
+        string[] lines = File.ReadAllLines(filename);
 
         foreach (string line in lines)
         {
