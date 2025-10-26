@@ -15,15 +15,24 @@ public class Reference
         _endVerse = endVerse;
     }
 
-    public string GetReference()
+    public Reference(string book, string chapter, string startVerse)
     {
-        if (string.IsNullOrWhiteSpace(_endVerse) != true)
-        {
-            return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
-        }
-        else
-        {
-            return $"{_book} {_chapter}:{_startVerse}";
-        }
+        _book = book;
+        _chapter = chapter;
+        _startVerse = startVerse;
+        _endVerse = startVerse;
     }
+
+    public string GetReference()
+        {
+            if (_startVerse != _endVerse)
+            {
+                return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+            }
+            else
+            {
+                return $"{_book} {_chapter}:{_startVerse}";
+            }
+        }
+
 }
