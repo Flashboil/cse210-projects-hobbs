@@ -1,10 +1,10 @@
 public class Activity
 {
-    private int _duration;
-    private string _activityName;
-    private string _activityDescription;
+    protected int _duration;
+    protected string _activityName;
+    protected string _activityDescription;
 
-    Activity(int duration, string activity, string description)
+    protected Activity(int duration, string activity, string description)
     {
         _duration = duration;
         _activityName = activity;
@@ -39,7 +39,7 @@ public class Activity
 
         List<string> frames = new List<string>
         {
-            "█","▓","░","▓"
+            @"\","|","/","-",
         };
 
         int frameCount = frames.Count;
@@ -62,6 +62,7 @@ public class Activity
         Console.WriteLine($"Welcome to the {_activityName}!");
         Console.WriteLine();
         Console.WriteLine(_activityDescription);
+        Console.WriteLine();
     }
     
     public string SelectPrompt(List<string> prompts)
