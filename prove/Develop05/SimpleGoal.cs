@@ -5,9 +5,11 @@ class SimpleGoal : Goal
         
     }
 
-    public override void CompleteTask()
+    public override void CompleteTask(Record record)
     {
-        
+        _isComplete = true;
+        record.AddPoints(_points);
+        record.CheckStreak();
     }
 
     public override string GetInfo()

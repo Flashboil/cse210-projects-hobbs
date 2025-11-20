@@ -25,7 +25,7 @@ abstract class Goal
         _points = points;
     }
 
-    public abstract void CompleteTask();
+    public abstract void CompleteTask(Record record);
 
     public abstract string GetInfo();
 }
