@@ -28,4 +28,6 @@ abstract class Goal
     public abstract void CompleteTask(Record record);
 
     public abstract string GetInfo();
+
+    public abstract string FormatSave();
 }

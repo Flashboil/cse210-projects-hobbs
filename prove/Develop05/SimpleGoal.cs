@@ -23,4 +23,9 @@ class SimpleGoal : Goal
             return $"[ ] {_name} ({_description})";
         }
     }
+
+    public override string FormatSave()
+    {
+        return $"SimpleGoal|{_name}|{_description}|{_points}|{_isComplete}";
+    }
 }

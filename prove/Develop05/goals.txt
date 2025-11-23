@@ -1,0 +1,5 @@
+1310|11/21/2025 12:00:00 AM|10
+SimpleGoal|goal|testing testing goal|100|True
+SimpleGoal|finish homework|i need to finish my homework|100|True
+FixedGoal|test program|testing all functions of this program|10|False|1|3
+EndlessGoal|practice|practice homework|30|False|4
