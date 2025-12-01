@@ -1,0 +1,16 @@
+class Card : Tile
+{
+    private string _name;
+    private int _power;
+    private int _health;
+    private int _cost;
+
+    public Card(int column, int row, string name, int power, int health, int cost) : base(column, row)
+    {
+        _visual = new List<string> {"┌───┐",$"|{power}/{health}|","└───┘"};
+        _power = power;
+        _health = health;
+        _cost = cost;
+        _name = name;
+    }
+}
