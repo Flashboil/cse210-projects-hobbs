@@ -12,11 +12,23 @@ class BoardRow
         _tiles = tiles;
     }
 
-    public BoardRow(int row)
+    public BoardRow(int row, string type)
     {
-        for (int column = 0; column < 5; column++)
+        _tiles = new List<Tile>();
+
+        if (type == "p")
         {
-            _tiles.Add(new EmptySpace(column, row));
+            for (int column = 0; column < 5; column++)
+            {
+                _tiles.Add(new EmptySpace(column, row));
+            }   
+        }
+        else
+        {
+            for (int column = 0; column < 5; column++)
+            {
+                _tiles.Add(new PreviewSpace(column, row));
+            }   
         }
     }
 
@@ -30,5 +42,10 @@ class BoardRow
             }   
             Console.WriteLine();
         }
+    }
+
+    public void UpdateRow(int column, Tile tile)
+    {
+        _tiles[column] = tile;
     }
 }
