@@ -13,4 +13,23 @@ class Card : Tile
         _cost = cost;
         _name = name;
     }
+
+    public int GetPower()
+    {
+        return _power;
+    }
+
+    public bool TakeDamage(int damage)
+    {
+        _health -= damage;
+
+        if (_health <= 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
