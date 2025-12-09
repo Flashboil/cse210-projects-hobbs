@@ -1,6 +1,6 @@
 class EmptySpace : Tile
 {
-    public EmptySpace(int column, int row) : base(column, row)
+    public EmptySpace()
     {
         _visual = new List<string> {"╒ - ╕","|   |","╘ - ╛"};
     }

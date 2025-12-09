@@ -1,6 +1,6 @@
 class PreviewSpace : Tile
 {
-    public PreviewSpace(int column, int row) : base(column, row)
+    public PreviewSpace()
         {
             _visual = new List<string> {"╒ - ╕","| v |","╘ - ╛"};
         }

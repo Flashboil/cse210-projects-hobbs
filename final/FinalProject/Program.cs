@@ -5,13 +5,16 @@ class Program
     static void Main(string[] args)
     {
         GameBoard board = new GameBoard();
-        board.RenderBoard();
-
-        GameManager manager = new GameManager(2, 4, 15, 5, board);
-
-        manager.RenderBattery();
-        manager.RenderScore();
+        PlayerDeck deck = new PlayerDeck();
+        GameManager manager = new GameManager(0, 0, 0, 0, board, deck);
 
         manager.RenderClearAll();
+
+        deck.DrawHand();
+        deck.RenderHand();
+
+        manager.PlayerPlayCard(0, 2);
+        manager.RenderAll();
+        deck.RenderHand();
     }
 }

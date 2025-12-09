@@ -26,6 +26,6 @@ class GameBoard
 
     public void UpdateRow(int column, int row, Tile tile)
     {
-        
+        _rows[row].UpdateRow(column, tile);
     }
 }

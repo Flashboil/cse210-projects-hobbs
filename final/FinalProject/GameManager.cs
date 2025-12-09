@@ -5,14 +5,17 @@ class GameManager
     private int _maxBattery;
     private (int player, int enemy) _score;
     private GameBoard _board;
+    private Deck _playerDeck;
+    private Deck _enemyDeck;
 
-    public GameManager(int battery, int maxBattery, int playerScore, int enemeyScore, GameBoard board)
+    public GameManager(int battery, int maxBattery, int playerScore, int enemeyScore, GameBoard board, Deck player)
     {
         _playerTurn = true;
         _battery = battery;
         _maxBattery = maxBattery;
         _score = (playerScore, enemeyScore);
         _board = board;
+        _playerDeck = player;
     }
     
     public void DoCombat()
@@ -75,9 +78,9 @@ class GameManager
 
     public void RenderAll()
     {
+        RenderScore();
         _board.RenderBoard();
         RenderBattery();
-        RenderScore();
     }
 
     public void RenderClearAll()
@@ -85,8 +88,24 @@ class GameManager
         Console.Clear();
         Console.WriteLine("\x1b[3J");
 
+        RenderScore();
         _board.RenderBoard();
         RenderBattery();
-        RenderScore();
+    }
+
+    public void PlayerPlayCard(int column, int index)
+    {
+        int row = 2;
+        Card card = _playerDeck.CardFromHand(index);
+        _playerDeck.Discard(index);
+        _board.UpdateRow(column, row, card);
+    }
+
+    public void EnemyPlayCard(int column, int index)
+    {
+        int row = 0;
+        Card card = _enemyDeck.CardFromHand(index);
+        _enemyDeck.Discard(index);
+        _board.UpdateRow(column, row, card);
     }
 }

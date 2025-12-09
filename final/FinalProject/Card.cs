@@ -5,7 +5,7 @@ class Card : Tile
     private int _health;
     private int _cost;
 
-    public Card(int column, int row, string name, int power, int health, int cost) : base(column, row)
+    public Card(string name, int power, int health, int cost)
     {
         _visual = new List<string> {"┌───┐",$"|{power}/{health}|","└───┘"};
         _power = power;
