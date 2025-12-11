@@ -28,4 +28,9 @@ class GameBoard
     {
         _rows[row].UpdateRow(column, tile);
     }
+
+    public BoardRow GetBoardRow(int row)
+    {
+        return _rows[row];
+    }
 }

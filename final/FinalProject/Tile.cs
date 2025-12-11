@@ -12,4 +12,14 @@ class Tile
     {
         Console.Write(_visual[line]);
     }
+
+    public void UpdateVisual(List<String> visual)
+    {
+        _visual = visual;
+    }
+
+    public virtual int GetPower()
+    {
+        return 0;
+    }
 }

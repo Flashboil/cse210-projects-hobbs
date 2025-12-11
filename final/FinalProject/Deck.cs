@@ -28,6 +28,16 @@ class Deck
         _hand.Add(randomItem);
     }
 
+    public void DrawVessel()
+    {
+        Random random = new Random(); 
+        int index = random.Next(_vessels.Count); 
+        Card randomItem = _vessels[index];
+        
+        _vessels.Remove(randomItem);
+        _hand.Add(randomItem);
+    }
+
     public void DrawHand()
     {
         for (int draw = 0; draw < 4; draw++)
@@ -51,6 +61,11 @@ class Deck
     public Card CardFromHand(int index)
     {
         return _hand[index];
+    }
+
+    public List<Card> CardsFromHand()
+    {
+        return _hand;
     }
 
     public void Discard(int index)

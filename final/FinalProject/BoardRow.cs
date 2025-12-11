@@ -48,4 +48,14 @@ class BoardRow
     {
         _tiles[column] = tile;
     }
+
+    public List<Tile> GetTiles()
+    {
+        return _tiles;
+    }
+
+    public Tile GetSingleTile(int index)
+    {
+        return _tiles[index];
+    }
 }

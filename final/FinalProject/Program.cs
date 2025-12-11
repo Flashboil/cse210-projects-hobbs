@@ -6,15 +6,12 @@ class Program
     {
         GameBoard board = new GameBoard();
         PlayerDeck deck = new PlayerDeck();
-        GameManager manager = new GameManager(0, 0, 0, 0, board, deck);
-
-        manager.RenderClearAll();
-
+        EnemyDeck enemy = new EnemyDeck();
+        GameManager manager = new GameManager(6, 6, 0, 0, board, deck, enemy);
+        
         deck.DrawHand();
-        deck.RenderHand();
-
-        manager.PlayerPlayCard(0, 2);
         manager.RenderAll();
-        deck.RenderHand();
+        manager.PlayerPlayCard(2, 0);
+
     }
 }
