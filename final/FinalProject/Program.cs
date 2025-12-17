@@ -7,11 +7,20 @@ class Program
         GameBoard board = new GameBoard();
         PlayerDeck deck = new PlayerDeck();
         EnemyDeck enemy = new EnemyDeck();
-        GameManager manager = new GameManager(6, 6, 0, 0, board, deck, enemy);
+        GameManager manager = new GameManager(1, 1, 0, 0, board, deck, enemy);
         
         deck.DrawHand();
         manager.RenderAll();
-        manager.PlayerPlayCard(2, 0);
+        
+        manager.DoTurn();
+
+        bool running = true;
+
+        while (running)
+        {
+            manager.DoTurn();
+            running = manager.GetRunning();
+        }
 
     }
 }

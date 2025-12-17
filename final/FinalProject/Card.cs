@@ -23,6 +23,11 @@ class Card : Tile
         return _power;
     }
 
+    public override int GetHealth()
+    {
+        return _health;
+    }
+
     public bool TakeDamage(int damage)
     {
         _health -= damage;

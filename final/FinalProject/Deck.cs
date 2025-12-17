@@ -20,12 +20,16 @@ class Deck
 
     public void DrawCard()
     {
-        Random random = new Random(); 
-        int index = random.Next(_library.Count); 
-        Card randomItem = _library[index];
-        
-        _library.Remove(randomItem);
-        _hand.Add(randomItem);
+        if (_library.Count > 0)
+        {
+            Random random = new Random(); 
+            int index = random.Next(_library.Count); 
+            Card randomItem = _library[index];
+            
+            _library.Remove(randomItem);
+            _hand.Add(randomItem);
+        }
+
     }
 
     public void DrawVessel()
@@ -73,5 +77,20 @@ class Deck
         Card card = _hand[index];
         _hand.Remove(card);
         _discard.Add(card);
+    }
+
+    public List<Card> GetHand()
+    {
+        return _hand;
+    }
+
+    public List<Card> GetLibrary()
+    {
+        return _library;
+    }
+
+    public List<Card> GetVessels()
+    {
+        return _vessels;
     }
 }

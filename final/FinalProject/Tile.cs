@@ -1,12 +1,6 @@
 class Tile
 {
     protected List<string> _visual;
-    // protected (int column, int row) _location;
-
-    // public Tile(int column, int row)
-    // {
-    //     _location = (column, row);
-    // }
 
     public void PrintVisual(int line)
     {
@@ -19,6 +13,11 @@ class Tile
     }
 
     public virtual int GetPower()
+    {
+        return 0;
+    }
+
+    public virtual int GetHealth()
     {
         return 0;
     }
